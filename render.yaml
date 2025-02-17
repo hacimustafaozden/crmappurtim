@@ -1,0 +1,9 @@
+services:
+  - name: crmappurtim
+    env: docker
+    region: frankfurt
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8080
