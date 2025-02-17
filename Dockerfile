@@ -1,5 +1,5 @@
 # Kotlin JDK 17 ile başlayalım
-FROM openjdk:17-oracle AS build
+FROM eclipse-temurin:17-jdk-slim AS build
 
 # Çalışma dizini
 WORKDIR /app
@@ -14,7 +14,7 @@ COPY . .
 RUN ./gradlew installDist --no-daemon
 
 # Minimal JRE ile çalıştırma aşaması
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-slim
 WORKDIR /app
 COPY --from=build /app/build/install/ .
 EXPOSE 8080
