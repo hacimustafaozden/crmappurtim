@@ -1,5 +1,5 @@
 # Kotlin JDK 17 ile başlayalım
-FROM eclipse-temurin:17-jre-slim AS build
+FROM openjdk:17-oracle AS build
 
 # Çalışma dizini
 WORKDIR /app
