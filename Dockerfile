@@ -1,5 +1,5 @@
 # Kotlin JDK 17 ile başlayalım
-FROM openjdk:17-jdk-slim AS build
+FROM eclipse-temurin:17-jre-slim AS build
 
 # Çalışma dizini
 WORKDIR /app
@@ -18,4 +18,4 @@ FROM openjdk:17-jre-slim
 WORKDIR /app
 COPY --from=build /app/build/install/ .
 EXPOSE 8080
-CMD ["ktor-api/bin/ktor-api"]
+CMD ["crmappurtim/bin/crmappurtim"]
